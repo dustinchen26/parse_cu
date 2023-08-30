@@ -27,6 +27,9 @@
         .udp-ul {
             color: red; /* 設定 UDP-UL 的文字顏色為紅色 */
         }
+        a {
+            color: blue; /* 將所有連結的顏色設定為藍色 */
+        }        
     </style>
     <script>
         function parseThroughput() {
@@ -52,10 +55,28 @@
 <body>
     <h2>cu_stats_XXX.txt Throughput Parser</h2>
     <p style="margin: 0;">Author: Dustin_Chen, email: <a href="mailto:Dustin_Chen@compal.com" style="line-height: 1;">Dustin_Chen@compal.com</a> or <a href="mailto:chuhpsdustin@gmail.com" style="line-height: 1;">chuhpsdustin@gmail.com</a></p>
-    <p>● Please paste the whole "cu_stats_XXX.txt" content below, and it will parse the non-zero Throughput value.</p>
-    <textarea id="inputText" rows="10" cols="50"></textarea><br>
-    <button onclick="parseThroughput()">Parse</button>
+
+    <ul>
+        <li><b>Reference</b>
+            <ul>
+                <li>Parse “cu_stats_XXX.txt” => <a href="https://dustinchen26.github.io/parse_cu" target="_blank">https://dustinchen26.github.io/parse_cu</a></li>
+                <li>Parse “du_stats_XXX.txt” => <a href="https://dustinchen26.github.io/parse_du" target="_blank">https://dustinchen26.github.io/parse_du</a></li>
+            </ul>
+        </li>
+		<br>
+        <li><b>cu_stats_XXX.txt Throughput Parser</b>
+            <ul>
+                <li>Please paste the whole "cu_stats_XXX.txt" content below, then it will parse non-zero throughput values.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <div style="margin-left: 20px;">
+        <textarea id="inputText" rows="10" cols="50"></textarea><br>
+        <button onclick="parseThroughput()">Parse</button>
+    </div>
+
     <h3>Output:</h3>
-    <div id="output"></div>
+    <div style="margin-left: 20px;" id="output"></div>
 </body>
 </html>
