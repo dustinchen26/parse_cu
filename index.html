@@ -43,11 +43,15 @@
                 var line = lines[i];
                 
                 if (line.includes("GNB MGR STATISTICS")) {
-                    output += '<span class="gnb-stats">' + line + '</span>';
+                    output += '<br><span class="gnb-stats">' + line + '</span>';
                 } else if (line.includes("UDP-DL-Tx")) {
-                    output += '&nbsp;&nbsp;&nbsp;&nbsp;<span class="udp-dl-tx">' + line + '</span>';
+                    // Modify this line to exclude "[ CUMM-TX-FAIL: 0]"
+                    var udpDlTxLine = line.replace(/\[ CUMM-TX-FAIL: \d+\]/g, '');
+                    output += '&nbsp;&nbsp;&nbsp;&nbsp;<span class="udp-dl-tx">' + udpDlTxLine + '</span>';
                 } else if (line.includes("UDP-UL-Tx")) {
-                    output += '&nbsp;&nbsp;&nbsp;&nbsp;<span class="udp-ul-tx">' + line + '</span><br>';
+                    // Modify this line to exclude "[ CUMM-TX-FAIL: 0]"
+                    var udpUlTxLine = line.replace(/\[ CUMM-TX-FAIL: \d+\]/g, '');
+                    output += '&nbsp;&nbsp;&nbsp;&nbsp;<span class="udp-ul-tx">' + udpUlTxLine + '</span>';
                 }
             }
 
